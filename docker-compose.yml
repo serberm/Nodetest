@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  api:
+    image: clipboardhealth/api
+    build: ./
+    command: npm start
+    restart: on-failure
+    environment:
+      SERVER_PORT: 3004
+      TOKEN_KEY: test123
+    volumes:
+      - .:/src
+    ports:
+      - "3004:3004"
